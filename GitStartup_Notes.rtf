@@ -1,0 +1,120 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset0 Monaco;}
+{\colortbl;\red255\green255\blue255;\red242\green242\blue242;\red20\green20\blue20;\red198\green49\blue33;
+\red55\green190\blue37;\red168\green169\blue35;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\fs20 \cf2 \cb3 \CocoaLigature0 Last login: Tue Jan 17 12:52:30 on ttys001\
+Administrators-MacBook-Pro-4:~ dylantomac$ git clone https://github.com/d-x-v7/test-project.git\
+Cloning into 'test-project'...\
+remote: Counting objects: 3, done.\
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0\
+Unpacking objects: 100% (3/3), done.\
+Administrators-MacBook-Pro-4:~ dylantomac$ git config --global user.name "Dylan Tomac"\
+Administrators-MacBook-Pro-4:~ dylantomac$ git config --global user.email "dylan.tomac@gmail.com"\
+Administrators-MacBook-Pro-4:~ dylantomac$ git config user.name\
+Dylan Tomac\
+Administrators-MacBook-Pro-4:~ dylantomac$ git config user.email\
+dylan.tomac@gmail.com\
+Administrators-MacBook-Pro-4:~ dylantomac$ ls\
+Applications		Downloads		Music\
+Creative Cloud Files	Google Drive		Pictures\
+Desktop			Library			Public\
+Documents		Movies			test-project\
+Administrators-MacBook-Pro-4:~ dylantomac$ cd test-project\
+Administrators-MacBook-Pro-4:test-project dylantomac$ git status\
+On branch master\
+Your branch is up-to-date with 'origin/master'.\
+nothing to commit, working tree clean\
+Administrators-MacBook-Pro-4:test-project dylantomac$ touch index.html\
+Administrators-MacBook-Pro-4:test-project dylantomac$ git status\
+On branch master\
+Your branch is up-to-date with 'origin/master'.\
+Untracked files:\
+  (use "git add <file>..." to include in what will be committed)\
+\
+	\cf4 index.html\cf2 \
+\
+nothing added to commit but untracked files present (use "git add" to track)\
+Administrators-MacBook-Pro-4:test-project dylantomac$ git add index.html\
+Administrators-MacBook-Pro-4:test-project dylantomac$ git status\
+On branch master\
+Your branch is up-to-date with 'origin/master'.\
+Changes to be committed:\
+  (use "git reset HEAD <file>..." to unstage)\
+\
+	\cf5 new file:   index.html\cf2 \
+\
+Administrators-MacBook-Pro-4:test-project dylantomac$ git commit -m "Created index file"\
+[master 21eaf27] Created index file\
+ 1 file changed, 0 insertions(+), 0 deletions(-)\
+ create mode 100644 index.html\
+Administrators-MacBook-Pro-4:test-project dylantomac$ git status\
+On branch master\
+Your branch is ahead of 'origin/master' by 1 commit.\
+  (use "git push" to publish your local commits)\
+nothing to commit, working tree clean\
+Administrators-MacBook-Pro-4:test-project dylantomac$ git status\
+On branch master\
+Your branch is ahead of 'origin/master' by 1 commit.\
+  (use "git push" to publish your local commits)\
+Changes not staged for commit:\
+  (use "git add <file>..." to update what will be committed)\
+  (use "git checkout -- <file>..." to discard changes in working directory)\
+\
+	\cf4 modified:   index.html\cf2 \
+\
+no changes added to commit (use "git add" and/or "git commit -a")\
+Administrators-MacBook-Pro-4:test-project dylantomac$ git add *\
+Administrators-MacBook-Pro-4:test-project dylantomac$ git status\
+On branch master\
+Your branch is ahead of 'origin/master' by 1 commit.\
+  (use "git push" to publish your local commits)\
+Changes to be committed:\
+  (use "git reset HEAD <file>..." to unstage)\
+\
+	\cf5 modified:   index.html\cf2 \
+\
+Administrators-MacBook-Pro-4:test-project dylantomac$ git commit m- "Modified text"\
+error: pathspec 'm-' did not match any file(s) known to git.\
+error: pathspec 'Modified text' did not match any file(s) known to git.\
+Administrators-MacBook-Pro-4:test-project dylantomac$ git commit -m "Modified text"\
+[master 58ee3ba] Modified text\
+ 1 file changed, 1 insertion(+)\
+Administrators-MacBook-Pro-4:test-project dylantomac$ git log\
+\cf6 commit 58ee3ba9b257f70e847207f3c60fb98c144060d9\cf2 \
+Author: Dylan Tomac <dylan.tomac@gmail.com>\
+Date:   Tue Jan 17 13:08:03 2017 -0700\
+\
+    Modified text\
+\
+\cf6 commit 21eaf2755f20a137793981b1905f0ba961c4a7eb\cf2 \
+Author: Dylan Tomac <dylan.tomac@gmail.com>\
+Date:   Tue Jan 17 13:05:46 2017 -0700\
+\
+    Created index file\
+\
+\cf6 commit a0e0dc54e35926ea72a7e1a446f51d78341e8d25\cf2 \
+Author: Dylan <dylan.tomac@gmail.com>\
+Date:   Tue Jan 17 12:26:05 2017 -0700\
+\
+    Initial commit\
+Administrators-MacBook-Pro-4:test-project dylantomac$ git log --pretty=one\
+\cf6 58ee3ba9b257f70e847207f3c60fb98c144060d9\cf2  Modified text\
+\cf6 21eaf2755f20a137793981b1905f0ba961c4a7eb\cf2  Created index file\
+\cf6 a0e0dc54e35926ea72a7e1a446f51d78341e8d25\cf2  Initial commit\
+Administrators-MacBook-Pro-4:test-project dylantomac$ git log --pretty=one -2\
+\cf6 58ee3ba9b257f70e847207f3c60fb98c144060d9\cf2  Modified text\
+\cf6 21eaf2755f20a137793981b1905f0ba961c4a7eb\cf2  Created index file\
+Administrators-MacBook-Pro-4:test-project dylantomac$ git push origin master\
+Username for 'https://github.com': d-x-v7\
+Password for 'https://d-x-v7@github.com': \
+Counting objects: 6, done.\
+Delta compression using up to 8 threads.\
+Compressing objects: 100% (4/4), done.\
+Writing objects: 100% (6/6), 554 bytes | 0 bytes/s, done.\
+Total 6 (delta 0), reused 0 (delta 0)\
+To https://github.com/d-x-v7/test-project.git\
+   a0e0dc5..58ee3ba  master -> master\
+Administrators-MacBook-Pro-4:test-project dylantomac$ }
